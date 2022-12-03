@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9f00e596493d422d93e29c42c67774f5" Name="Diagram1">
+        <EntityTypeShape EntityType="KGuzmanProgramacionNCapasModel.Area" Width="1.5" PointX="5.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KGuzmanProgramacionNCapasModel.Colonia" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KGuzmanProgramacionNCapasModel.Departamento" Width="1.5" PointX="8" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KGuzmanProgramacionNCapasModel.Direccion" Width="1.5" PointX="5.25" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KGuzmanProgramacionNCapasModel.Estado" Width="1.5" PointX="1.5" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KGuzmanProgramacionNCapasModel.Municipio" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KGuzmanProgramacionNCapasModel.Pai" Width="1.5" PointX="1.5" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KGuzmanProgramacionNCapasModel.Producto" Width="1.5" PointX="10.25" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="KGuzmanProgramacionNCapasModel.Proveedor" Width="1.5" PointX="8" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KGuzmanProgramacionNCapasModel.Rol" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KGuzmanProgramacionNCapasModel.Usuario" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="KGuzmanProgramacionNCapasModel.FK_DepartamentoArea" ManuallyRouted="false" />
+        <AssociationConnector Association="KGuzmanProgramacionNCapasModel.FK_Colonia" ManuallyRouted="false" />
+        <AssociationConnector Association="KGuzmanProgramacionNCapasModel.FK_Municipio" ManuallyRouted="false" />
+        <AssociationConnector Association="KGuzmanProgramacionNCapasModel.FK_IdDeprtamento" ManuallyRouted="false" />
+        <AssociationConnector Association="KGuzmanProgramacionNCapasModel.FK_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="KGuzmanProgramacionNCapasModel.FK_Estado" ManuallyRouted="false" />
+        <AssociationConnector Association="KGuzmanProgramacionNCapasModel.FK_Pais" ManuallyRouted="false" />
+        <AssociationConnector Association="KGuzmanProgramacionNCapasModel.FK_IdProveedor" ManuallyRouted="false" />
+        <AssociationConnector Association="KGuzmanProgramacionNCapasModel.FK_UsuarioRol" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
