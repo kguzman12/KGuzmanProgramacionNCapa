@@ -49,7 +49,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Area.cs" />
+    <Compile Include="Colonia.cs" />
+    <Compile Include="Departamento.cs" />
+    <Compile Include="Direccion.cs" />
+    <Compile Include="Estado.cs" />
+    <Compile Include="Municipio.cs" />
+    <Compile Include="Pais.cs" />
+    <Compile Include="Producto.cs" />
+    <Compile Include="Rol.cs" />
+    <Compile Include="Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
