@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace DL
 {
-    public class conexion
+    public class Conexion
     {
-        public static string GetConnectionString()//Buscar la cadena de conexión
+        public static string GetConnection()//Buscar la cadena de conexión
         {
             return ConfigurationManager.ConnectionStrings["KGuzmanProgramacionNCapas"].ConnectionString.ToString();
         }

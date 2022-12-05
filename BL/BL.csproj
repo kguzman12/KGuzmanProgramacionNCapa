@@ -62,9 +62,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DL\DL.csproj">
+      <Project>{54dbb4e1-af34-4291-82b9-65197b2d427b}</Project>
+      <Name>DL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DL_EF\DL_EF.csproj">
       <Project>{57ad4f6c-b4e1-4dcd-b2ee-26d0784462e5}</Project>
       <Name>DL_EF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ML\ML.csproj">
+      <Project>{8ca9ef16-8d07-44e3-8773-1ccd3c8c4c0a}</Project>
+      <Name>ML</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
