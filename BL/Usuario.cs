@@ -502,7 +502,7 @@ namespace BL
             return result;
         }
 
-        //Entity Framework
+    //Entity Framework
         public static ML.Result AddEF(ML.Usuario usuario)
         {
             ML.Result result = new ML.Result(); //instancia de Result
