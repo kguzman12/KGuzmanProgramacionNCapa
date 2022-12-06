@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BL
 {
-    public class Pais
+    public class Proveedor
     {
         public static ML.Result GetAll()
         {
@@ -15,19 +15,19 @@ namespace BL
             {
                 using (DL_EF.KGuzmanProgramacionNCapasEntities context = new DL_EF.KGuzmanProgramacionNCapasEntities())
                 {
-                    var paises = context.PaisGetAll().ToList();
+                    var proveedores = context.ProveedorGetAll().ToList();
 
                     result.Objects = new List<object>();
 
-                    if (paises != null)
+                    if (proveedores != null)
                     {
-                        foreach (var objetoPais in paises)
+                        foreach (var objetoProveedor in proveedores)
                         {
-                            ML.Pais pais = new ML.Pais();
-                            pais.IdPais = objetoPais.IdPais;
-                            pais.Nombre = objetoPais.Nombre;
+                            ML.Proveedor proveedor = new ML.Proveedor();
+                            proveedor.IdProveedor = objetoProveedor.IdProveedor;
+                            proveedor.Nombre = objetoProveedor.Nombre;
 
-                            result.Objects.Add(pais);
+                            result.Objects.Add(proveedor);
 
                         }
                         result.Correct = true;
