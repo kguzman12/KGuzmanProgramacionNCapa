@@ -584,7 +584,7 @@ namespace BL
             return result;
         }
 
-        public static ML.Result GetAllEF()
+        public static ML.Result GetAllEF(ML.Usuario usuario)
         {
             ML.Result result = new ML.Result(); //instancia de Result
             try
@@ -599,7 +599,7 @@ namespace BL
                     {
                         foreach (var objeto in usuarios)
                         {
-                            ML.Usuario usuario = new ML.Usuario();
+                            usuario = new ML.Usuario();
 
                             usuario.IdUsuario = objeto.IdUsuario;
                             usuario.Nombre = objeto.NombreUsuario;
