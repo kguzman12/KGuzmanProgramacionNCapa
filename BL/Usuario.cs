@@ -537,6 +537,7 @@ namespace BL
             {
                 using (DL_EF.KGuzmanProgramacionNCapasEntities contex = new DL_EF.KGuzmanProgramacionNCapasEntities())
                 {
+                    //usuario.Rol.IdRol = (usuario.Rol.IdRol == null) ? 0 : usuario.Rol.IdRol;
                     var query = contex.UsuarioUpdate(usuario.IdUsuario, usuario.Nombre, usuario.ApellidoPaterno, usuario.ApellidoMaterno, usuario.FechaNacimiento, usuario.Sexo, usuario.Password, usuario.Telefono, usuario.Celular, usuario.Curp, usuario.UserName, usuario.Email, usuario.Rol.IdRol, usuario.Imagen, usuario.Direccion.Calle, usuario.Direccion.NumeroInterior, usuario.Direccion.NumeroExterior, usuario.Direccion.Colonia.IdColonia);
 
                     if (query > 0)
@@ -591,6 +592,8 @@ namespace BL
             {
                 using (DL_EF.KGuzmanProgramacionNCapasEntities contex = new DL_EF.KGuzmanProgramacionNCapasEntities())
                 {
+                    //usuario.Nombre = (usuario.Nombre == null) ? "" : usuario.Nombre;
+
                     var usuarios = contex.UsuarioGetAll().ToList();
 
                     result.Objects = new List<object>();
@@ -602,10 +605,10 @@ namespace BL
                             usuario = new ML.Usuario();
 
                             usuario.IdUsuario = objeto.IdUsuario;
-                            usuario.Nombre = objeto.NombreUsuario;
+                            usuario.Nombre = objeto.Nombre;
                             usuario.ApellidoPaterno = objeto.ApellidoPaterno;
                             usuario.ApellidoMaterno = objeto.ApellidoMaterno;
-                            usuario.FechaNacimiento = objeto.FechaNacimiento.ToString("dd-MM-yyyy");
+                            usuario.FechaNacimiento = objeto.FechaNacimiento.Value.ToString("dd-MM-yyyy");
                             usuario.Sexo = objeto.Sexo;
                             usuario.Password = objeto.Password;
                             usuario.Telefono = objeto.Telefono;
@@ -616,7 +619,7 @@ namespace BL
 
                             usuario.Rol = new ML.Rol();
                             usuario.Rol.IdRol = byte.Parse(objeto.IdRol.ToString());
-                            usuario.Rol.Nombre = objeto.NombreRol;
+                            usuario.Rol.Nombre = objeto.Nombre;
 
                             usuario.Imagen = objeto.Imagen;
 
@@ -627,20 +630,20 @@ namespace BL
                             usuario.Direccion.NumeroExterior = objeto.NumeroExterior;
                             
                             usuario.Direccion.Colonia = new ML.Colonia();
-                            usuario.Direccion.Colonia.IdColonia = objeto.IdColonia.Value;
+                            usuario.Direccion.Colonia.IdColonia = objeto.IdColonia;
                             usuario.Direccion.Colonia.Nombre = objeto.NombreColonia;
                             usuario.Direccion.Colonia.CodigoPostal = objeto.CodigoPostal;
                             
                             usuario.Direccion.Colonia.Municipio = new ML.Municipio();
-                            usuario.Direccion.Colonia.Municipio.IdMunicipio = objeto.IdMunicipio.Value;
+                            usuario.Direccion.Colonia.Municipio.IdMunicipio = objeto.IdMunicipio;
                             usuario.Direccion.Colonia.Municipio.Nombre = objeto.NombreMunicipio;
                            
                             usuario.Direccion.Colonia.Municipio.Estado = new ML.Estado();
-                            usuario.Direccion.Colonia.Municipio.Estado.IdEstado = objeto.IdEstado.Value;
+                            usuario.Direccion.Colonia.Municipio.Estado.IdEstado = objeto.IdEstado;
                             usuario.Direccion.Colonia.Municipio.Estado.Nombre = objeto.NombreEstado;
                             
                             usuario.Direccion.Colonia.Municipio.Estado.Pais = new ML.Pais();
-                            usuario.Direccion.Colonia.Municipio.Estado.Pais.IdPais = objeto.IdPais.Value;
+                            usuario.Direccion.Colonia.Municipio.Estado.Pais.IdPais = objeto.IdPais;
                             usuario.Direccion.Colonia.Municipio.Estado.Pais.Nombre = objeto.NombrePais;
 
 
@@ -676,10 +679,10 @@ namespace BL
                         ML.Usuario usuario = new ML.Usuario();
 
                         usuario.IdUsuario = tableUsuario.IdUsuario;
-                        usuario.Nombre = tableUsuario.NombreUsuario;
+                        usuario.Nombre = tableUsuario.Nombre;
                         usuario.ApellidoPaterno = tableUsuario.ApellidoPaterno;
                         usuario.ApellidoMaterno = tableUsuario.ApellidoMaterno;
-                        usuario.FechaNacimiento = tableUsuario.FechaNacimiento.ToString("dd-MM-yyyy");
+                        usuario.FechaNacimiento = tableUsuario.FechaNacimiento.Value.ToString("dd-MM-yyyy");
                         usuario.Sexo = tableUsuario.Sexo;
                         usuario.Password = tableUsuario.Password;
                         usuario.Telefono = tableUsuario.Telefono;
@@ -700,20 +703,19 @@ namespace BL
                         usuario.Direccion.NumeroExterior = tableUsuario.NumeroExterior;
                        
                         usuario.Direccion.Colonia = new ML.Colonia();
-                        usuario.Direccion.Colonia.IdColonia = tableUsuario.IdColonia.Value;
+                        usuario.Direccion.Colonia.IdColonia = tableUsuario.IdColonia;
                         usuario.Direccion.Colonia.Nombre = tableUsuario.NombreColonia;
-                        usuario.Direccion.Colonia.CodigoPostal = tableUsuario.CodigoPostal;
                     
                         usuario.Direccion.Colonia.Municipio = new ML.Municipio();
-                        usuario.Direccion.Colonia.Municipio.IdMunicipio = tableUsuario.IdMunicipio.Value;
+                        usuario.Direccion.Colonia.Municipio.IdMunicipio = tableUsuario.IdMunicipio;
                         usuario.Direccion.Colonia.Municipio.Nombre = tableUsuario.NombreMunicipio;
                        
                         usuario.Direccion.Colonia.Municipio.Estado = new ML.Estado();
-                        usuario.Direccion.Colonia.Municipio.Estado.IdEstado = tableUsuario.IdEstado.Value;
+                        usuario.Direccion.Colonia.Municipio.Estado.IdEstado = tableUsuario.IdEstado;
                         usuario.Direccion.Colonia.Municipio.Estado.Nombre = tableUsuario.NombreEstado;
                         
                         usuario.Direccion.Colonia.Municipio.Estado.Pais = new ML.Pais();
-                        usuario.Direccion.Colonia.Municipio.Estado.Pais.IdPais = tableUsuario.IdPais.Value;
+                        usuario.Direccion.Colonia.Municipio.Estado.Pais.IdPais = tableUsuario.IdPais;
                         usuario.Direccion.Colonia.Municipio.Estado.Pais.Nombre = tableUsuario.NombrePais;
 
                         result.Object = usuario;
@@ -759,7 +761,7 @@ namespace BL
                     usuarioDL.Curp = usuario.Curp;
                     usuarioDL.UserName = usuario.UserName;
                     usuarioDL.Email = usuario.Email;
-                    usuarioDL.IdRol = usuario.Rol.IdRol;
+                    usuarioDL.IdRol = (byte)usuario.Rol.IdRol;
 
                     //usuario.Rol = new ML.Rol();
                     //usuario.Rol.IdRol = byte.Parse(usuarioDL.IdRol.ToString());
@@ -801,10 +803,7 @@ namespace BL
                     usuarioDL.Curp = usuario.Curp;
                     usuarioDL.UserName = usuario.UserName;
                     usuarioDL.Email = usuario.Email;
-                    usuarioDL.IdRol = usuario.Rol.IdRol;
-
-                    //usuario.Rol = new ML.Rol();
-                    //usuario.Rol.IdRol = byte.Parse(usuarioDL.IdRol.ToString());
+                    usuarioDL.IdRol = (byte)usuario.Rol.IdRol;
 
                     context.Usuarios.Add(usuarioDL);
                     context.SaveChanges();
@@ -887,7 +886,7 @@ namespace BL
                             usuario.Nombre = row.Nombre;
                             usuario.ApellidoPaterno = row.ApellidoPaterno;
                             usuario.ApellidoMaterno = row.ApellidoPaterno;
-                            usuario.FechaNacimiento = row.FechaNacimiento.ToString("dd-MM-yyyy");
+                            usuario.FechaNacimiento = row.FechaNacimiento.Value.ToString("dd-MM-yyyy");
                             usuario.Sexo = row.Sexo;
                             usuario.Password = row.Password;
                             usuario.Telefono = row.Telefono;
@@ -935,7 +934,7 @@ namespace BL
                                  {
                                      IdUsuario = usuarioLQ.IdUsuario,
 
-                                     Nombre = usuarioLQ.NombreUsuario,
+                                     Nombre = usuarioLQ.Nombre,
                                      ApellidoPaterno = usuarioLQ.ApellidoPaterno,
                                      ApellidoMaterno = usuarioLQ.ApellidoMaterno,
                                      FechaNacimiento = usuarioLQ.FechaNacimiento,
@@ -958,7 +957,7 @@ namespace BL
                         usuario.Nombre = query.Nombre;
                         usuario.ApellidoPaterno = query.ApellidoPaterno;
                         usuario.ApellidoMaterno = query.ApellidoMaterno;
-                        usuario.FechaNacimiento = query.FechaNacimiento.ToString("dd-MM-yyyy");
+                        usuario.FechaNacimiento = query.FechaNacimiento.Value.ToString("dd-MM-yyyy");
                         usuario.Sexo = query.Sexo;
                         usuario.Password = query.Password;
                         usuario.Telefono = query.Telefono;
