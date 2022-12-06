@@ -592,9 +592,10 @@ namespace BL
             {
                 using (DL_EF.KGuzmanProgramacionNCapasEntities contex = new DL_EF.KGuzmanProgramacionNCapasEntities())
                 {
-                    //usuario.Nombre = (usuario.Nombre == null) ? "" : usuario.Nombre;
+                    usuario.Nombre = (usuario.Nombre == null) ? "" : usuario.Nombre;
+                    usuario.ApellidoPaterno = (usuario.ApellidoPaterno == null) ? "" : usuario.ApellidoPaterno;
 
-                    var usuarios = contex.UsuarioGetAll().ToList();
+                    var usuarios = contex.UsuarioGetAll(usuario.Nombre, usuario.ApellidoPaterno).ToList();
 
                     result.Objects = new List<object>();
 
