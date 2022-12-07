@@ -129,14 +129,14 @@ namespace BL
             return result;
         }
 
-        public static ML.Result GetByIdEF(int idUsuario)
+        public static ML.Result GetByIdEF(int idDepartamento)
         {
             ML.Result result = new ML.Result(); //instancia de Result
             try
             {
                 using (DL_EF.KGuzmanProgramacionNCapasEntities contex = new DL_EF.KGuzmanProgramacionNCapasEntities())
                 {
-                    var tableDepartamento = contex.DepartamentoGetById(idUsuario).FirstOrDefault();
+                    var tableDepartamento = contex.DepartamentoGetById(idDepartamento).FirstOrDefault();
                     
                     result.Objects = new List<object>();
 

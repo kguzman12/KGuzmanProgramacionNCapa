@@ -15,14 +15,31 @@ namespace SL_WCF
         {
             ML.Result result = BL.Departamento.AddEF(departamento);
             return new SL_WCF.Result { Correct = result.Correct, Ex = result.Ex, Message = result.Message, Object = result.Object, Objects = result.Objects };
-
         }
 
         public SL_WCF.Result GetAll()
         {
             ML.Result result = BL.Departamento.GetAllEF();
             return new SL_WCF.Result { Correct = result.Correct, Ex = result.Ex, Message = result.Message, Object = result.Object, Objects = result.Objects };
-
         }
+
+        public SL_WCF.Result GetById(int idDepartamento)
+        {
+            ML.Result result = BL.Departamento.GetByIdEF(idDepartamento);
+            return new SL_WCF.Result { Correct = result.Correct, Ex = result.Ex, Message = result.Message, Object = result.Object, Objects = result.Objects };
+        }
+
+        public SL_WCF.Result Update(ML.Departamento departamento)
+        {
+            ML.Result result = BL.Departamento.UpdateEF(departamento);
+            return new SL_WCF.Result { Correct = result.Correct, Ex = result.Ex, Message = result.Message, Object = result.Object, Objects = result.Objects };
+        }
+
+        public SL_WCF.Result Delete(int idDepartamento)
+        {
+            ML.Result result = BL.Departamento.DeleteEF(idDepartamento);
+            return new SL_WCF.Result { Correct = result.Correct, Ex = result.Ex, Message = result.Message, Object = result.Object, Objects = result.Objects };
+        }
+
     }
 }
