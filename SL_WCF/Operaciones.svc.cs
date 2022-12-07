@@ -23,17 +23,17 @@ namespace SL_WCF
 
         public float Resta(int numero1, int numero2)
         {
-            return numero1 + numero2;
+            return numero1 - numero2;
         }
 
         public float Multiplicacion(int numero1, int numero2)
         {
-            return numero1 + numero2;
+            return numero1 * numero2;
         }
 
         public float Division(int numero1, int numero2)
         {
-            return numero1 + numero2;
+            return numero1 / numero2;
         }
 
     }

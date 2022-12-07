@@ -89,7 +89,7 @@ namespace BL
             return result;
         }
 
-        public static ML.Result GetAllEF(ML.Departamento departamento)
+        public static ML.Result GetAllEF()
         {
             ML.Result result = new ML.Result(); //instancia de Result
             try
@@ -104,7 +104,7 @@ namespace BL
                     {
                         foreach (var objeto in departamentos)
                         {
-                            departamento = new ML.Departamento();
+                            ML.Departamento departamento = new ML.Departamento();
                             departamento.IdDepartamento = objeto.IdDepartamento;
                             departamento.Nombre = objeto.Nombre;
 
