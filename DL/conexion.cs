@@ -9,7 +9,7 @@ namespace DL
 {
     public class Conexion
     {
-        public static string GetConnection()//Buscar la cadena de conexión
+        public static string GetConnection()
         {
             return ConfigurationManager.ConnectionStrings["KGuzmanProgramacionNCapas"].ConnectionString.ToString();
         }
